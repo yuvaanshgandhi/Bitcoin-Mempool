@@ -36,7 +36,7 @@ struct PortfolioView: View {
             .padding(.bottom, 50)
         }
         .refreshable {
-            await viewModel.loadPortfolio()
+            await viewModel.loadPortfolio(currency: currencySettings.selectedCurrency)
         }
         .overlay(alignment: .bottomTrailing) {
             addButton
@@ -59,8 +59,8 @@ struct PortfolioView: View {
         } message: {
             Text("Enter a new label for this address")
         }
-        .task {
-            await viewModel.loadPortfolio()
+        .task(id: currencySettings.selectedCurrency) {
+            await viewModel.loadPortfolio(currency: currencySettings.selectedCurrency)
         }
     }
     
@@ -78,6 +78,11 @@ struct PortfolioView: View {
                     Text(formatBTC(viewModel.totalBalanceBTC))
                         .font(.system(size: 36, weight: .bold, design: .monospaced))
                         .foregroundStyle(.white)
+                        
+                    Text("\(viewModel.totalBalanceSats) SATS")
+                        .font(.title3.monospaced().weight(.semibold))
+                        .foregroundStyle(.orange.opacity(0.9))
+                        .padding(.bottom, 2)
                     
                     if let price = viewModel.price {
                         let fiatBalance = viewModel.totalBalanceBTC * currencySettings.price(from: price)
@@ -153,6 +158,7 @@ struct PortfolioView: View {
                             .lineStyle(StrokeStyle(lineWidth: 1, dash: [4]))
                     }
                 }
+                .chartYScale(domain: .automatic(includesZero: false))
                 .chartXAxis {
                     AxisMarks(values: .automatic(desiredCount: 4)) { _ in
                         AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5))
@@ -250,6 +256,7 @@ struct PortfolioView: View {
                             .lineStyle(StrokeStyle(lineWidth: 1, dash: [4]))
                     }
                 }
+                .chartYScale(domain: .automatic(includesZero: false))
                 .chartXAxis {
                     AxisMarks(values: .automatic(desiredCount: 4)) { _ in
                         AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5))

@@ -33,5 +33,23 @@ struct HistoricalPriceResponse: Codable {
 
 struct HistoricalPriceEntry: Codable {
     let time: Int
-    let USD: Double
+    let price: Double
+    
+    struct DynamicCodingKeys: CodingKey {
+        var stringValue: String
+        init?(stringValue: String) { self.stringValue = stringValue }
+        var intValue: Int?
+        init?(intValue: Int) { return nil }
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
+        self.time = try container.decode(Int.self, forKey: DynamicCodingKeys(stringValue: "time")!)
+        
+        if let key = container.allKeys.first(where: { $0.stringValue != "time" }) {
+            self.price = try container.decode(Double.self, forKey: key)
+        } else {
+            self.price = 0
+        }
+    }
 }

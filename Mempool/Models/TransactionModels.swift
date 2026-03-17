@@ -63,6 +63,12 @@ struct MempoolStats: Codable, Sendable {
     let tx_count: Int
 }
 
+struct NetworkMempoolStats: Codable, Sendable {
+    let count: Int?
+    let vbytes: Int?
+    let total_fee: Double?
+}
+
 struct RecentTransaction: Codable, Identifiable, Hashable, Sendable {
     let txid: String
     let fee: Int

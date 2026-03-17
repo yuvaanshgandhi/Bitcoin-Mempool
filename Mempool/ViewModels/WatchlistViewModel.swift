@@ -33,12 +33,15 @@ class WatchlistViewModel: ObservableObject {
     
     func loadItems() {
         watchedItems = storage.load()
-        for item in watchedItems {
-            if item.type == .transaction && !item.isConfirmed {
-                wsService.trackTransaction(item.identifier)
-            } else if item.type == .address {
-                wsService.trackAddress(item.identifier)
-            }
+        
+        let unconfirmedTxs = watchedItems.filter { $0.type == .transaction && !$0.isConfirmed }.map { $0.identifier }
+        let addresses = watchedItems.filter { $0.type == .address }.map { $0.identifier }
+        
+        if !unconfirmedTxs.isEmpty {
+            wsService.trackTransactions(unconfirmedTxs)
+        }
+        if !addresses.isEmpty {
+            wsService.trackAddresses(addresses)
         }
     }
     

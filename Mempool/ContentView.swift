@@ -19,7 +19,7 @@ struct ContentView: View {
                 NavigationStack {
                     ExploreView()
                         .navigationDestination(for: ProjectedBlock.self) { block in
-                             ProjectedBlockDetailView(block: block)
+                             BlockDetailView(identifier: block.id.uuidString, projectedBlock: block)
                         }
                 }
                 .tabItem {

@@ -92,7 +92,7 @@ struct ExploreView: View {
                                         ProjectedBlockCard(block: block, index: index)
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 20)
-                                                    .stroke(Color.orange.opacity(0.5), style: StrokeStyle(lineWidth: 1, dash: [5]))
+                                                    .stroke(getMedianFeeColor(block.medianFee).opacity(0.5), style: StrokeStyle(lineWidth: 1, dash: [5]))
                                             )
                                     }
                                     .buttonStyle(.plain)
@@ -132,11 +132,24 @@ struct ExploreView: View {
                                                 
                                                 Divider().background(.white.opacity(0.3))
                                                 
-                                                VStack(alignment: .leading) {
-                                                    Text("Size")
-                                                        .font(.caption2).foregroundStyle(.white.opacity(0.6))
-                                                    Text("\((Double(block.size) / 1_000_000).formatted(.number.precision(.fractionLength(2)))) MB")
-                                                        .font(.caption.bold()).foregroundStyle(.white)
+                                                if let extras = block.extras {
+                                                    VStack {
+                                                        Text("~\(String(format: "%.1f", extras.medianFee)) sat/vB")
+                                                            .font(.caption.bold())
+                                                            .foregroundStyle(getMedianFeeColor(extras.medianFee))
+                                                        if let minFee = extras.feeRange.first, let maxFee = extras.feeRange.last {
+                                                            Text("\(Int(minFee)) - \(Int(maxFee)) sat/vB")
+                                                                .font(.caption2)
+                                                                .foregroundStyle(.white.opacity(0.6))
+                                                        }
+                                                    }
+                                                } else {
+                                                    VStack(alignment: .leading) {
+                                                        Text("Size")
+                                                            .font(.caption2).foregroundStyle(.white.opacity(0.6))
+                                                        Text("\((Double(block.size) / 1_000_000).formatted(.number.precision(.fractionLength(2)))) MB")
+                                                            .font(.caption.bold()).foregroundStyle(.white)
+                                                    }
                                                 }
                                                 
                                                 VStack(alignment: .leading) {
@@ -150,7 +163,7 @@ struct ExploreView: View {
                                             .frame(width: 140, height: 180)
                                         }
                                         // Tint effect for confirmed blocks
-                                        .background(Color.blue.opacity(0.1).cornerRadius(20)) 
+                                        .background((block.extras != nil ? getMedianFeeColor(block.extras!.medianFee) : Color.blue).opacity(0.1).cornerRadius(20)) 
                                     }
                                     .buttonStyle(.plain)
                                 }
@@ -202,7 +215,7 @@ struct ExploreView: View {
                             
                             HStack(alignment: .top) {
                                 VStack(alignment: .center, spacing: 4) {
-                                    Text("~9.2 mins")
+                                    Text(String(format: "%.1f mins", Double(diff.timeAvg) / 60000.0))
                                         .font(.title3.bold()).foregroundStyle(.white)
                                     Text("Avg block time")
                                         .font(.caption).foregroundStyle(.white.opacity(0.5))
@@ -219,9 +232,79 @@ struct ExploreView: View {
                                 .frame(maxWidth: .infinity)
                                 
                                 VStack(alignment: .center, spacing: 4) {
-                                    Text("~\(diff.remainingBlocks / 144) days")
-                                        .font(.title2.bold()).foregroundStyle(.white)
-                                    Text("Retarget")
+                                    HStack(alignment: .firstTextBaseline, spacing: 4) {
+                                        Text("\(diff.remainingBlocks)")
+                                            .font(.title2.bold()).foregroundStyle(.white)
+                                        Text("Blks")
+                                            .font(.caption2).foregroundStyle(.white.opacity(0.5))
+                                    }
+                                    
+                                    let timeRemainingSecs = Double(diff.remainingTime) / 1000.0
+                                    let days = Int(timeRemainingSecs / 86400)
+                                    let hours = Int((timeRemainingSecs.truncatingRemainder(dividingBy: 86400)) / 3600)
+                                    let timeString = days > 0 ? "~\(days)d \(hours)h" : "~\(hours)h"
+                                    
+                                    Text(timeString)
+                                        .font(.caption.bold()).foregroundStyle(.orange)
+                                }
+                                .frame(maxWidth: .infinity)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
+                // 1.5 Halving Countdown
+                if let tip = viewModel.tipHeight {
+                    let epoch = (tip / 210_000) + 1
+                    let nextHalvingBlock = epoch * 210_000
+                    let blocksRemaining = nextHalvingBlock - tip
+                    let progress = Double(210_000 - blocksRemaining) / 210_000.0
+                    let nextSubsidy = 50.0 / pow(2.0, Double(epoch))
+                    
+                    MiningCard(title: "HALVING COUNTDOWN") {
+                        VStack(spacing: 20) {
+                            // Progress Bar
+                            GeometryReader { geo in
+                                ZStack(alignment: .leading) {
+                                    Rectangle()
+                                        .fill(Color(white: 0.2))
+                                        .frame(height: 20)
+                                    
+                                    Rectangle()
+                                        .fill(Color.orange)
+                                        .frame(width: geo.size.width * progress, height: 20)
+                                }
+                                .cornerRadius(4)
+                            }
+                            .frame(height: 20)
+                            
+                            HStack(alignment: .top) {
+                                VStack(alignment: .center, spacing: 4) {
+                                    Text(String(format: "%.3f", nextSubsidy) + " BTC")
+                                        .font(.title3.bold()).foregroundStyle(.white)
+                                    Text("New subsidy")
+                                        .font(.caption).foregroundStyle(.white.opacity(0.5))
+                                }
+                                .frame(maxWidth: .infinity)
+                                
+                                VStack(alignment: .center, spacing: 4) {
+                                    Text("\(blocksRemaining)")
+                                        .font(.title2.bold())
+                                        .foregroundStyle(.white)
+                                    Text("Blocks remaining")
+                                        .font(.caption2).foregroundStyle(.white.opacity(0.5))
+                                }
+                                .frame(maxWidth: .infinity)
+                                
+                                VStack(alignment: .center, spacing: 4) {
+                                    // Estimate time. 10 mins per block
+                                    let daysRemaining = Double(blocksRemaining) * 10.0 / 60.0 / 24.0
+                                    let years = Int(daysRemaining / 365)
+                                    let days = Int(daysRemaining.truncatingRemainder(dividingBy: 365))
+                                    Text("~" + (years > 0 ? "\(years)y " : "") + "\(days)d")
+                                        .font(.title2.bold()).foregroundStyle(.orange)
+                                    Text("Estimate")
                                         .font(.caption).foregroundStyle(.white.opacity(0.5))
                                 }
                                 .frame(maxWidth: .infinity)
@@ -311,10 +394,12 @@ struct ExploreView: View {
                             Spacer()
                             
                             VStack(alignment: .leading, spacing: 5) {
+                                let totalBlocks = viewModel.pools.reduce(0) { $0 + $1.blockCount }
                                 ForEach(viewModel.pools.prefix(6)) { pool in
                                     HStack(spacing: 4) {
                                         Circle().fill(Color.gray).frame(width: 6, height: 6)
-                                        Text(pool.name)
+                                        let percent = (Double(pool.blockCount) / Double(max(totalBlocks, 1))) * 100.0
+                                        Text("\(pool.name) (\(String(format: "%.1f", percent))%)")
                                             .font(.caption2)
                                             .foregroundStyle(.white.opacity(0.7))
                                             .lineLimit(1)
@@ -421,7 +506,7 @@ struct ProjectedBlockCard: View {
                             .foregroundStyle(.white.opacity(0.6))
                         Text("\(Int(minFee)) - \(Int(maxFee)) sat/vB")
                             .font(.caption.bold())
-                            .foregroundStyle(.white)
+                            .foregroundStyle(getMedianFeeColor(block.medianFee))
                     }
                 }
                 
@@ -437,5 +522,15 @@ struct ProjectedBlockCard: View {
             .padding()
             .frame(width: 140, height: 180)
         }
+    }
+}
+
+func getMedianFeeColor(_ fee: Double) -> Color {
+    switch fee {
+    case ..<5: return .cyan
+    case 5..<20: return .green
+    case 20..<50: return .yellow
+    case 50..<100: return .orange
+    default: return .red
     }
 }

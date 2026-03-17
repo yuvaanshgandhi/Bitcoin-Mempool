@@ -7,7 +7,7 @@ enum WebSocketEvent {
     case transactionConfirmed(txid: String, blockHeight: Int?)
     case addressUpdated(address: String)
     case projectedBlocks([ProjectedBlock])
-    case stats(MempoolStats)
+    case stats(NetworkMempoolStats)
     case hashrate([Hashrate])
     case connected
     case disconnected
@@ -104,6 +104,18 @@ class MempoolWebSocketService: ObservableObject {
         }
     }
     
+    func trackTransactions(_ txids: [String]) {
+        for txid in txids { trackedTxids.insert(txid) }
+        guard let task = webSocketTask, !txids.isEmpty else { return }
+        
+        if let data = try? JSONSerialization.data(withJSONObject: ["track-txs": txids]),
+           let msg = String(data: data, encoding: .utf8) {
+            task.send(.string(msg)) { error in
+                if let error = error { print("[WS] Track txs error: \(error)") }
+            }
+        }
+    }
+    
     func untrackTransaction(_ txid: String) {
         trackedTxids.remove(txid)
     }
@@ -124,8 +136,38 @@ class MempoolWebSocketService: ObservableObject {
         }
     }
     
+    func trackAddresses(_ addresses: [String]) {
+        for address in addresses { trackedAddresses.insert(address) }
+        guard let task = webSocketTask, !addresses.isEmpty else { return }
+        
+        if let data = try? JSONSerialization.data(withJSONObject: ["track-addresses": addresses]),
+           let msg = String(data: data, encoding: .utf8) {
+            task.send(.string(msg)) { error in
+                if let error = error { print("[WS] Track addresses error: \(error)") }
+            }
+        }
+    }
+    
     func untrackAddress(_ address: String) {
         trackedAddresses.remove(address)
+    }
+    
+    // MARK: - Mempool Tracking Outputs
+    
+    func trackMempoolTxids(_ track: Bool = true) {
+        guard let task = webSocketTask else { return }
+        let msg = #"{"track-mempool-txids":\#(track)}"#
+        task.send(.string(msg)) { error in
+            if let error = error { print("[WS] Track mempool txids error: \(error)") }
+        }
+    }
+    
+    func trackMempoolBlock(_ index: Int) {
+        guard let task = webSocketTask else { return }
+        let msg = #"{"track-mempool-block":\#(index)}"#
+        task.send(.string(msg)) { error in
+            if let error = error { print("[WS] Track mempool block error: \(error)") }
+        }
     }
     
     // MARK: - Private
@@ -232,7 +274,7 @@ class MempoolWebSocketService: ObservableObject {
                 if let statsData = json["mempoolInfo"] as? [String: Any] {
                     do {
                         let data = try JSONSerialization.data(withJSONObject: statsData)
-                        let stats = try JSONDecoder().decode(MempoolStats.self, from: data)
+                        let stats = try JSONDecoder().decode(NetworkMempoolStats.self, from: data)
                         DispatchQueue.main.async {
                             self.eventPublisher.send(.stats(stats))
                         }
@@ -263,15 +305,22 @@ class MempoolWebSocketService: ObservableObject {
     }
     
     private func resubscribeTrackedItems() {
-        for txid in trackedTxids {
-            guard let task = webSocketTask else { return }
-            let msg = #"{"track-tx":"\#(txid)"}"#
-            task.send(.string(msg)) { _ in }
+        guard let task = webSocketTask else { return }
+        
+        if !trackedTxids.isEmpty {
+            let txidsArray = Array(trackedTxids)
+            if let data = try? JSONSerialization.data(withJSONObject: ["track-txs": txidsArray]),
+               let msg = String(data: data, encoding: .utf8) {
+                task.send(.string(msg)) { _ in }
+            }
         }
-        for address in trackedAddresses {
-            guard let task = webSocketTask else { return }
-            let msg = #"{"track-address":"\#(address)"}"#
-            task.send(.string(msg)) { _ in }
+        
+        if !trackedAddresses.isEmpty {
+            let addressesArray = Array(trackedAddresses)
+            if let data = try? JSONSerialization.data(withJSONObject: ["track-addresses": addressesArray]),
+               let msg = String(data: data, encoding: .utf8) {
+                task.send(.string(msg)) { _ in }
+            }
         }
     }
     

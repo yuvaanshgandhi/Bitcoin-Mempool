@@ -22,7 +22,11 @@ struct MempoolBlock: Codable, Identifiable, Hashable, Sendable {
     let totalFees: Int?
     let medianFee: Double?
     let feeRange: [Double]?
+    
+    // Natively retrieved from blocks endpoint
+    let extras: BlockExtras?
 }
+
 
 struct ProjectedBlock: Codable, Identifiable, Hashable, Sendable {
     var id: UUID { UUID() }
@@ -58,7 +62,7 @@ struct BlockDetail: Codable, Identifiable, Sendable {
     }
 }
 
-struct BlockExtras: Codable, Sendable {
+struct BlockExtras: Codable, Hashable, Sendable {
     let totalFees: Int
     let medianFee: Double
     let feeRange: [Double]
@@ -66,7 +70,7 @@ struct BlockExtras: Codable, Sendable {
     let pool: PoolInfo
 }
 
-struct PoolInfo: Codable, Sendable {
+struct PoolInfo: Codable, Hashable, Sendable {
     let id: Int
     let name: String
     let slug: String

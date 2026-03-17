@@ -9,7 +9,7 @@ class ExploreViewModel: ObservableObject {
     @Published var projectedBlocks: [ProjectedBlock] = []
     @Published var confirmedBlocks: [MempoolBlock] = []
     @Published var price: BitcoinPrice?
-    @Published var mempoolStats: MempoolStats?
+    @Published var mempoolStats: NetworkMempoolStats?
     
     // Mining stats
     @Published var pools: [MiningPool] = []
@@ -26,10 +26,18 @@ class ExploreViewModel: ObservableObject {
     private let service = MempoolService.shared
     private let wsService = MempoolWebSocketService.shared
     private var cancellables = Set<AnyCancellable>()
+    private var projectedBlocksSubject = PassthroughSubject<[ProjectedBlock], Never>()
     
     init() {
         startPolling()
         subscribeToWebSocket()
+        
+        projectedBlocksSubject
+            .throttle(for: .seconds(3), scheduler: RunLoop.main, latest: true)
+            .sink { [weak self] blocks in
+                withAnimation { self?.projectedBlocks = blocks }
+            }
+            .store(in: &cancellables)
     }
     
     func startPolling() {
@@ -61,7 +69,7 @@ class ExploreViewModel: ObservableObject {
                 case .newBlock(let blockData):
                     self?.handleNewBlock(blockData)
                 case .projectedBlocks(let blocks):
-                    withAnimation { self?.projectedBlocks = blocks }
+                    self?.projectedBlocksSubject.send(blocks)
                 case .stats(let stats):
                     withAnimation { self?.mempoolStats = stats }
                 case .hashrate(let rates):

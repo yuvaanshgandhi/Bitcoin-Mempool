@@ -23,8 +23,8 @@ actor MempoolService {
         return try await fetch(endpoint: "/v1/prices")
     }
     
-    func getHistoricalPrice() async throws -> HistoricalPriceResponse {
-        return try await fetch(endpoint: "/v1/historical-price?currency=USD")
+    func getHistoricalPrice(currency: String = "USD") async throws -> HistoricalPriceResponse {
+        return try await fetch(endpoint: "/v1/historical-price?currency=\(currency)")
     }
     
     func getBlocks() async throws -> [MempoolBlock] {
@@ -49,7 +49,7 @@ actor MempoolService {
     
     // MARK: - Blocks
     func getBlock(hash: String) async throws -> BlockDetail {
-        return try await fetch(endpoint: "/block/\(hash)")
+        return try await fetch(endpoint: "/v1/block/\(hash)")
     }
     
     func getBlockStatus(hash: String) async throws -> TxStatus { // Reusing TxStatus struct or create BlockStatus? The API returns {in_best_chain, height, next_best}

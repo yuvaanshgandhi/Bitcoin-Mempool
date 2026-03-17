@@ -3,8 +3,8 @@ import SwiftUI
 struct BlockDetailView: View {
     @StateObject private var viewModel: BlockDetailViewModel
     
-    init(identifier: String) {
-        _viewModel = StateObject(wrappedValue: BlockDetailViewModel(identifier: identifier))
+    init(identifier: String, projectedBlock: ProjectedBlock? = nil) {
+        _viewModel = StateObject(wrappedValue: BlockDetailViewModel(identifier: identifier, projectedBlock: projectedBlock))
     }
     
     var body: some View {
@@ -21,7 +21,7 @@ struct BlockDetailView: View {
                         Text("Block")
                             .font(.largeTitle).bold().foregroundStyle(.white)
                         Image(systemName: "chevron.left").foregroundStyle(.gray)
-                        Text("\(block.height)")
+                        Text(viewModel.isProjected ? "Projected" : "\(block.height)")
                             .font(.largeTitle).bold().foregroundStyle(.blue)
                         Image(systemName: "chevron.right").foregroundStyle(.blue)
                         Spacer()
@@ -32,10 +32,17 @@ struct BlockDetailView: View {
                     VStack(spacing: 0) {
                         // Row 1: Hash & Fee Span
                         HStack(alignment: .top) {
-                            DetailRow(label: "Hash", value: block.id_val.prefix(12) + "..." + block.id_val.suffix(8), isCopyable: true)
+                            if viewModel.isProjected {
+                                DetailRow(label: "Status", value: "Unconfirmed")
+                            } else {
+                                DetailRow(label: "Hash", value: block.id_val.prefix(12) + "..." + block.id_val.suffix(8), isCopyable: true)
+                            }
                             Spacer()
-                            // Mocking Fee Span if unavailable
-                            DetailRow(label: "Fee span", value: "1.22 - 278 sat/vB") 
+                            if let extras = block.extras, let firstFee = extras.feeRange.first, let lastFee = extras.feeRange.last {
+                                DetailRow(label: "Fee span", value: "\(Int(firstFee)) - \(Int(lastFee)) sat/vB")
+                            } else {
+                                DetailRow(label: "Fee span", value: "Unknown")
+                            }
                         }
                         .padding()
                         Divider().background(.white.opacity(0.1))
@@ -44,8 +51,11 @@ struct BlockDetailView: View {
                         HStack(alignment: .top) {
                             DetailRow(label: "Timestamp", value: formatDate(block.timestamp))
                             Spacer()
-                             // Mocking/Using extras if available
-                            DetailRow(label: "Median fee", value: "~3 sat/vB $0.28") 
+                            if let extras = block.extras {
+                                DetailRow(label: "Median fee", value: "~ \(String(format: "%.1f", extras.medianFee)) sat/vB")
+                            } else {
+                                DetailRow(label: "Median fee", value: "Unknown")
+                            }
                         }
                         .padding()
                         Divider().background(.white.opacity(0.1))
@@ -54,7 +64,11 @@ struct BlockDetailView: View {
                         HStack(alignment: .top) {
                             DetailRow(label: "Size", value: String(format: "%.2f MB", Double(block.size)/1_000_000))
                             Spacer()
-                            DetailRow(label: "Total fees", value: "0.043 BTC $2,852")
+                            if let extras = block.extras {
+                                DetailRow(label: "Total fees", value: String(format: "%.4f BTC", Double(extras.totalFees)/100_000_000))
+                            } else {
+                                DetailRow(label: "Total fees", value: "Unknown")
+                            }
                         }
                         .padding()
                         Divider().background(.white.opacity(0.1))
@@ -63,7 +77,11 @@ struct BlockDetailView: View {
                         HStack(alignment: .top) {
                             DetailRow(label: "Weight", value: String(format: "%.2f MWU", Double(block.weight)/1_000_000))
                             Spacer()
-                            DetailRow(label: "Subsidy + fees", value: "3.168 BTC $210,836")
+                            if let extras = block.extras {
+                                DetailRow(label: "Subsidy + fees", value: String(format: "%.4f BTC", Double(extras.reward)/100_000_000))
+                            } else {
+                                DetailRow(label: "Subsidy + fees", value: "Unknown")
+                            }
                         }
                         .padding()
                         Divider().background(.white.opacity(0.1))
@@ -75,7 +93,7 @@ struct BlockDetailView: View {
                                 Capsule().fill(Color.purple).frame(width: 50, height: 8)
                             }
                             Spacer()
-                            DetailRow(label: "Miner", value: "Foundry USA") // Placeholder or block.extras?.pool.name
+                            DetailRow(label: "Miner", value: block.extras?.pool.name ?? "Unknown")
                         }
                         .padding()
                     }

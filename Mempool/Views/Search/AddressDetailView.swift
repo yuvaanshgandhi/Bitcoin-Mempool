@@ -24,6 +24,16 @@ struct AddressDetailView: View {
                         Text("Address")
                             .font(.largeTitle).bold().foregroundStyle(.white)
                         Spacer()
+                        
+                        Button {
+                            viewModel.toggleWatchlist()
+                        } label: {
+                            Image(systemName: viewModel.isWatched ? "star.fill" : "star")
+                                .foregroundStyle(.yellow)
+                                .font(.title3)
+                        }
+                        .padding(.trailing, 8)
+                        
                         Text(stats.address.prefix(6) + "..." + stats.address.suffix(6))
                             .font(.headline.monospaced())
                             .foregroundStyle(.blue)

@@ -37,7 +37,8 @@ class PortfolioViewModel: ObservableObject {
         addresses = storage.load()
     }
     
-    func loadPortfolio() async {
+    func loadPortfolio(currency: String = "USD") async {
+        guard !isLoading else { return } // Prevent cancellation/overlap fetch errors
         isLoading = true
         defer { isLoading = false }
         
@@ -46,11 +47,11 @@ class PortfolioViewModel: ObservableObject {
         
         // Fetch historical price
         do {
-            let histResponse = try await service.getHistoricalPrice()
+            let histResponse = try await service.getHistoricalPrice(currency: currency)
             self.priceHistory = buildPriceHistory(from: histResponse)
             // Store sorted prices for portfolio value interpolation
             self.sortedHistoricalPrices = histResponse.prices
-                .map { (time: TimeInterval($0.time), usd: $0.USD) }
+                .map { (time: TimeInterval($0.time), usd: $0.price) }
                 .sorted { $0.time < $1.time }
         } catch {
             print("Historical price fetch error: \(error)")
@@ -151,28 +152,41 @@ class PortfolioViewModel: ObservableObject {
         }
         
         // Collect all transactions across all portfolio addresses with their balance contributions
+        // Collect all transactions across all portfolio addresses
         var allEvents: [(date: Date, deltaSats: Int)] = []
+        var hasNetworkError = false
         
-        await withTaskGroup(of: [(Date, Int)].self) { group in
+        await withTaskGroup(of: [(Date, Int)]?.self) { group in
             for addr in addresses {
                 group.addTask { [service] in
                     guard let txs = try? await service.getAllAddressTransactions(address: addr.address) else {
-                        return []
+                        return nil // Signals failure
                     }
                     return self.computeBalanceDeltas(for: addr.address, transactions: txs)
                 }
             }
             
             for await events in group {
-                allEvents.append(contentsOf: events.map { (date: $0.0, deltaSats: $0.1) })
+                if let events = events {
+                    allEvents.append(contentsOf: events)
+                } else {
+                    hasNetworkError = true
+                }
             }
+        }
+        
+        if hasNetworkError && allEvents.isEmpty {
+            // Retain existing balanceHistory on complete network failure to avoid chart flashing
+            return
         }
         
         // Sort by date (oldest first)
         allEvents.sort { $0.date < $1.date }
         
         guard !allEvents.isEmpty else {
-            balanceHistory = []
+            if !hasNetworkError {
+                balanceHistory = []
+            }
             return
         }
         
@@ -246,7 +260,7 @@ class PortfolioViewModel: ObservableObject {
         var points = entries.map { entry in
             PriceDataPoint(
                 date: Date(timeIntervalSince1970: TimeInterval(entry.time)),
-                price: Double(entry.USD)
+                price: Double(entry.price)
             )
         }
         
@@ -274,18 +288,52 @@ class PortfolioViewModel: ObservableObject {
         
         var points: [PriceDataPoint] = []
         
-        for balancePoint in balanceHistory {
-            let btcPrice = lookupPrice(at: balancePoint.date)
-            let usdValue = balancePoint.balance * btcPrice
-            points.append(PriceDataPoint(date: balancePoint.date, price: usdValue))
+        // 1. Iterate daily from the first balance date to today
+        let firstDate = balanceHistory.first!.date
+        let now = Date()
+        let oneDay: TimeInterval = 24 * 60 * 60
+        var currentDate = firstDate
+        
+        // Helper to grab instantaneous balance snapshot
+        func getBalance(at date: Date) -> Double {
+            var current: Double = 0
+            for bp in balanceHistory {
+                if bp.date <= date {
+                    current = bp.balance
+                } else {
+                    break
+                }
+            }
+            return current
         }
         
-        // Add current value as last point
-        if let currentPrice = price?.USD {
-            points.append(PriceDataPoint(date: Date(), price: totalBalanceBTC * currentPrice))
+        while currentDate <= now {
+            let bal = getBalance(at: currentDate)
+            let btcPrice = lookupPrice(at: currentDate)
+            points.append(PriceDataPoint(date: currentDate, price: bal * btcPrice))
+            
+            currentDate.addTimeInterval(oneDay)
         }
         
-        self.portfolioValueHistory = points
+        // 2. Firmly anchor "Right Now" using exact lookups
+        let currentBal = getBalance(at: now)
+        let currentBtcPrice = lookupPrice(at: now)
+        points.append(PriceDataPoint(date: now, price: currentBal * currentBtcPrice))
+        
+        // 3. Smooth UI chart render payload via decimation (> 150 points lags SwiftUI Charts)
+        if points.count > 150 {
+            let step = points.count / 150
+            var sampled: [PriceDataPoint] = []
+            for i in stride(from: 0, to: points.count, by: step) {
+                sampled.append(points[i])
+            }
+            if let last = points.last, sampled.last?.date != last.date {
+                sampled.append(last)
+            }
+            self.portfolioValueHistory = sampled
+        } else {
+            self.portfolioValueHistory = points
+        }
     }
     
     /// Binary search for the nearest historical price at a given date

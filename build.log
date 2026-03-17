@@ -1,0 +1,388 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj -scheme Mempool -destination "platform=iOS Simulator,name=iPhone 17 Pro" clean build
+
+2026-02-11 20:09:52.065 xcodebuild[9437:129525] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+** CLEAN SUCCEEDED **
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'Mempool' in project 'Mempool' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 8ffc6abc9f0fcdba883230d2c5ca5da2
+Build description path: /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/XCBuildData/8ffc6abc9f0fcdba883230d2c5ca5da2.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache
+
+CreateBuildDirectory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    builtin-create-build-directory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products
+
+CreateBuildDirectory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    builtin-create-build-directory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    builtin-create-build-directory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    builtin-create-build-directory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    builtin-create-build-directory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    builtin-create-build-directory /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool-692f79c30de37d574bac77ea6680df0f-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool.xcodeproj
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool-692f79c30de37d574bac77ea6680df0f-VFS-iphonesimulator/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.DependencyStaticMetadataFileList (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.DependencyMetadataFileList (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.hmap (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.hmap
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/empty-Mempool.plist (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/empty-Mempool.plist
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.SwiftConstValuesFileList (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-OutputFileMap.json (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.SwiftFileList (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.SwiftFileList
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.LinkFileList (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.LinkFileList
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool_const_extract_protocols.json (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-project-headers.hmap (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-project-headers.hmap
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-own-target-headers.hmap (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-generated-files.hmap (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-generated-files.hmap
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-target-headers.hmap (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-non-framework-target-headers.hmap (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-DebugDylibPath-normal-arm64.txt (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-DebugDylibInstallName-normal-arm64.txt (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-DebugDylibInstallName-normal-arm64.txt
+
+MkDir /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /bin/mkdir -p /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app
+
+WriteAuxiliaryFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/Entitlements-Simulated.plist (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    write-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/Entitlements-Simulated.plist
+
+ProcessProductPackaging "" /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "D67L4SD2QF.yuvaanshgandhi.Mempool";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent.der (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /usr/bin/derq query -f xml -i /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent.der --raw
+
+Ld /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app/__preview.dylib normal (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.2-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -F/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -install_name @rpath/Mempool.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app/__preview.dylib
+
+MkDir /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/unthinned (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /bin/mkdir -p /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/unthinned
+
+MkDir /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/thinned (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /bin/mkdir -p /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Assets.xcassets (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Assets.xcassets --compile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_dependencies --output-partial-info-plist /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 26.2 --platform iphonesimulator --bundle-identifier yuvaanshgandhi.Mempool --generate-swift-asset-symbols /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CompileAssetCatalogVariant thinned /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Assets.xcassets (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Assets.xcassets --compile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration iPhone18,1 --filter-for-device-os-version 26.2 --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 26.2 --platform iphonesimulator
+/* com.apple.actool.compilation-results */
+/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist_thinned
+
+
+LinkAssetCatalog /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Assets.xcassets (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-linkAssetCatalog --thinned /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/thinned --thinned-dependencies /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist_unthinned --output /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app --plist-output /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist
+
+ProcessInfoPlistFile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app/Info.plist /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/empty-Mempool.plist (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-infoPlistUtility /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/empty-Mempool.plist -producttype com.apple.product-type.application -genpkginfo /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/assetcatalog_generated_info.plist -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.app/Info.plist
+
+SwiftDriver Mempool normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Mempool -Onone -enforce-exclusivity\=checked @/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.2-simulator -g -module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -F /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache -output-file-map /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool_const_extract_protocols.json -Xcc -iquote -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-generated-files.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-own-target-headers.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-target-headers.hmap -Xcc -iquote -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-project-headers.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources-normal/arm64 -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/arm64 -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-Swift.h -working-directory /Users/yuvaanshgandhi/Desktop/Stuff/Mempool -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ MiningModels.swift,\ TransactionModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/MiningModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/TransactionModels.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/MiningModels.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/TransactionModels.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ DashboardViewModel.swift,\ MiningViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/DashboardViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/MiningViewModel.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/DashboardViewModel.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/MiningViewModel.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ BlockDetailView.swift,\ TransactionDetailView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/TransactionDetailView.swift (in target 'Mempool' from project 'Mempool')
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift:37:107: error: extra argument 'format' in call
+                        StatCard(title: "Size", value: "\(Double(block.size) / 1_000_000, format: .number.precision(.fractionLength(2))) MB")
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift:37:100: error: cannot infer contextual base in reference to member 'number'
+                        StatCard(title: "Size", value: "\(Double(block.size) / 1_000_000, format: .number.precision(.fractionLength(2))) MB")
+                                                                                                  ~^~~~~~
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift:37:118: error: cannot infer contextual base in reference to member 'fractionLength'
+                        StatCard(title: "Size", value: "\(Double(block.size) / 1_000_000, format: .number.precision(.fractionLength(2))) MB")
+                                                                                                                    ~^~~~~~~~~~~~~~
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/TransactionDetailView.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/BlockModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/GeneralModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/MiningModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/TransactionModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/BlockDetailViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/DashboardViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/MiningViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/SearchViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/TransactionDetailViewModel.swift -primary-file /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift -primary-file /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/TransactionDetailView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Dashboard/DashboardView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Mining/MiningView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Search/SearchView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Shared/GlassComponents.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ContentView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/MempoolApp.swift /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/BlockDetailView.d -emit-const-values-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/BlockDetailView.swiftconstvalues -emit-reference-dependencies-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/BlockDetailView.swiftdeps -serialize-diagnostics-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/BlockDetailView.dia -emit-dependencies-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/TransactionDetailView.d -emit-const-values-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/TransactionDetailView.swiftconstvalues -emit-reference-dependencies-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/TransactionDetailView.swiftdeps -serialize-diagnostics-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/TransactionDetailView.dia -emit-localized-strings -emit-localized-strings-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64 -target arm64-apple-ios26.2-simulator -module-can-import-version DeveloperToolsSupport 23.0.4 23.0.4 -module-can-import-version SwiftUI 7.2.5.1 7.2.5 -module-can-import-version UIKit 9126.2.4.1 9126.2.4 -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -I /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -F /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -profile-generate -profile-coverage-mapping -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool_const_extract_protocols.json -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -default-isolation\=MainActor -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/yuvaanshgandhi/Desktop/Stuff/Mempool -enable-anonymous-context-mangled-names -file-compilation-dir /Users/yuvaanshgandhi/Desktop/Stuff/Mempool -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-generated-files.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-own-target-headers.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-target-headers.hmap -Xcc -iquote -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-project-headers.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources-normal/arm64 -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/arm64 -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name Mempool -frontend-parseable-output -disable-clang-spi -target-sdk-version 26.2 -target-sdk-name iphonesimulator26.2 -clang-target arm64-apple-ios26.2-simulator -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/BlockDetailView.o -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/TransactionDetailView.o -index-unit-output-path /Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/BlockDetailView.o -index-unit-output-path /Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/TransactionDetailView.o -index-store-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Index.noindex/DataStore -index-system-modules
+SwiftCompile normal arm64 Compiling\ SearchViewModel.swift,\ TransactionDetailViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/SearchViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/TransactionDetailViewModel.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/SearchViewModel.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/SearchViewModel.swift:27:20: warning: value 'height' was defined but never used; consider replacing with boolean test
+            if let height = Int(trimmedQuery) {
+               ~~~~^~~~~~~~~
+                                              != nil
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/SearchViewModel.swift:51:11: warning: 'catch' block is unreachable because no errors are thrown in 'do' block
+        } catch {
+          ^
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/TransactionDetailViewModel.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ MempoolService.swift,\ BlockDetailViewModel.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/BlockDetailViewModel.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift:19:26: warning: main actor-isolated conformance of 'RecommendedFees' to 'Decodable' cannot be used in actor-isolated context; this is an error in the Swift 6 language mode
+        return try await fetch(endpoint: "/v1/fees/recommended")
+                         ^
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift:40:26: warning: main actor-isolated conformance of 'BlockDetail' to 'Decodable' cannot be used in actor-isolated context; this is an error in the Swift 6 language mode
+        return try await fetch(endpoint: "/block/\(hash)")
+                         ^
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift:46:26: warning: main actor-isolated conformance of 'TxStatus' to 'Decodable' cannot be used in actor-isolated context; this is an error in the Swift 6 language mode
+        return try await fetch(endpoint: "/block/\(hash)/status")
+                         ^
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift:55:26: warning: main actor-isolated conformance of 'Transaction' to 'Decodable' cannot be used in actor-isolated context; this is an error in the Swift 6 language mode
+        return try await fetch(endpoint: "/tx/\(txid)")
+                         ^
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift:60:26: warning: main actor-isolated conformance of 'AddressStats' to 'Decodable' cannot be used in actor-isolated context; this is an error in the Swift 6 language mode
+        return try await fetch(endpoint: "/address/\(address)")
+                         ^
+/Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Services/MempoolService.swift:89:26: warning: main actor-isolated conformance of 'DifficultyAdjustment' to 'Decodable' cannot be used in actor-isolated context; this is an error in the Swift 6 language mode
+        return try await fetch(endpoint: "/v1/difficulty-adjustment")
+                         ^
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ViewModels/BlockDetailViewModel.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Mempool (in target 'Mempool' from project 'Mempool')
+
+EmitSwiftModule normal arm64 (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ ContentView.swift,\ MempoolApp.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ContentView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/MempoolApp.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/ContentView.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/MempoolApp.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ SearchView.swift,\ GlassComponents.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Search/SearchView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Shared/GlassComponents.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Search/SearchView.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Shared/GlassComponents.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ BlockModels.swift,\ GeneralModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/BlockModels.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/GeneralModels.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/BlockModels.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Models/GeneralModels.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ DashboardView.swift,\ MiningView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Dashboard/DashboardView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Mining/MiningView.swift (in target 'Mempool' from project 'Mempool')
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Dashboard/DashboardView.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/Mining/MiningView.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftCompile normal arm64 Compiling\ GeneratedAssetSymbols.swift /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftCompile normal arm64 /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ContentView.swift, MempoolApp.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SearchViewModel.swift, TransactionDetailViewModel.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Mempool (in target 'Mempool' from project 'Mempool')
+
+SwiftDriver\ Compilation\ Requirements Mempool normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Mempool -Onone -enforce-exclusivity\=checked @/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.2-simulator -g -module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -F /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache -output-file-map /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool_const_extract_protocols.json -Xcc -iquote -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-generated-files.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-own-target-headers.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-all-target-headers.hmap -Xcc -iquote -Xcc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Mempool-project-headers.hmap -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources-normal/arm64 -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/arm64 -Xcc -I/Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-Swift.h -working-directory /Users/yuvaanshgandhi/Desktop/Stuff/Mempool -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/Mempool-Swift.h /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-Swift.h (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-swiftHeaderTool -arch arm64 /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool-Swift.h -o /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/DerivedSources/Mempool-Swift.h
+
+Copy /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftmodule (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftmodule /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftdoc (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftdoc /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.abi.json (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.abi.json /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftsourceinfo (in target 'Mempool' from project 'Mempool')
+    cd /Users/yuvaanshgandhi/Desktop/Stuff/Mempool
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Intermediates.noindex/Mempool.build/Debug-iphonesimulator/Mempool.build/Objects-normal/arm64/Mempool.swiftsourceinfo /Users/yuvaanshgandhi/Library/Developer/Xcode/DerivedData/Mempool-ajiuczbwubrliigiekwkfbpfuwpi/Build/Products/Debug-iphonesimulator/Mempool.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling DashboardViewModel.swift, MiningViewModel.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MempoolService.swift, BlockDetailViewModel.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Compiling GeneratedAssetSymbols.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Compiling BlockModels.swift, GeneralModels.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SearchView.swift, GlassComponents.swift (in target 'Mempool' from project 'Mempool')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MiningModels.swift, TransactionModels.swift (in target 'Mempool' from project 'Mempool')
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift (in target 'Mempool' from project 'Mempool')
+	SwiftCompile normal arm64 Compiling\ BlockDetailView.swift,\ TransactionDetailView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/BlockDetailView.swift /Users/yuvaanshgandhi/Desktop/Stuff/Mempool/Mempool/Views/BlockDetail/TransactionDetailView.swift (in target 'Mempool' from project 'Mempool')
+	Building project Mempool with scheme Mempool
+(3 failures)

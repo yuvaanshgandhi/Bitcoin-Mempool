@@ -55,39 +55,31 @@ struct TransactionDetailView: View {
                                 .foregroundStyle(.white.opacity(0.5))
                         }
                         
-                        // Notify When Confirmed button for unconfirmed transactions
+                        // Watchlist button for unconfirmed transactions
                         if !tx.status.confirmed {
-                            if viewModel.notificationScheduled {
+                            if viewModel.isInWatchlist {
                                 HStack(spacing: 8) {
-                                    Image(systemName: "checkmark.circle.fill")
+                                    Image(systemName: "eye.fill")
                                         .foregroundStyle(.green)
-                                    Text("Confirmed! Notification sent.")
+                                    Text("In Watchlist ✓")
                                         .font(.subheadline.bold())
                                         .foregroundStyle(.green)
                                 }
-                                .padding(.top, 4)
-                            } else if viewModel.isWatchingForConfirmation {
-                                HStack(spacing: 8) {
-                                    ProgressView()
-                                        .tint(.orange)
-                                        .scaleEffect(0.8)
-                                    Text("Watching for confirmation...")
-                                        .font(.subheadline)
-                                        .foregroundStyle(.orange)
-                                }
                                 .padding(.vertical, 8)
                                 .padding(.horizontal, 12)
-                                .background(Color.orange.opacity(0.15))
+                                .background(Color.green.opacity(0.15))
                                 .cornerRadius(8)
                                 .padding(.top, 4)
                             } else {
                                 Button {
-                                    viewModel.watchForConfirmation()
+                                    withAnimation(.spring(response: 0.3)) {
+                                        viewModel.addToWatchlist()
+                                    }
                                 } label: {
                                     HStack(spacing: 8) {
-                                        Image(systemName: "bell.badge")
+                                        Image(systemName: "eye")
                                             .font(.subheadline)
-                                        Text("Notify When Confirmed")
+                                        Text("Add to Watchlist")
                                             .font(.subheadline.bold())
                                     }
                                     .foregroundStyle(.white)

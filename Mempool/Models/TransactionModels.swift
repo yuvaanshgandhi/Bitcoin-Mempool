@@ -71,3 +71,35 @@ struct RecentTransaction: Codable, Identifiable, Hashable, Sendable {
     
     var id: String { txid }
 }
+
+enum WatchlistType: String, Codable {
+    case transaction
+    case address
+}
+
+struct WatchlistItem: Codable, Identifiable {
+    let id: UUID
+    let type: WatchlistType
+    let identifier: String // txid or address
+    let label: String?
+    let addedAt: Date
+    
+    // Transaction specific
+    var isConfirmed: Bool
+    var blockHeight: Int?
+    var confirmedAt: Date?
+    
+    // Address specific
+    var fundedTxoSum: Int?
+    var spentTxoSum: Int?
+    var txCount: Int?
+    
+    init(type: WatchlistType, identifier: String, label: String? = nil) {
+        self.id = UUID()
+        self.type = type
+        self.identifier = identifier
+        self.label = label
+        self.addedAt = Date()
+        self.isConfirmed = false
+    }
+}

@@ -15,26 +15,24 @@ struct ContentView: View {
                 }
                 .tag(0)
                 
-                // Dashboard Tab
+                // Explore Tab (Merged Dashboard + Mining)
                 NavigationStack {
-                    DashboardView()
+                    ExploreView()
                         .navigationDestination(for: ProjectedBlock.self) { block in
-                             Text("Detailed view for projected block logic needed")
+                             ProjectedBlockDetailView(block: block)
                         }
                 }
                 .tabItem {
-                    Label("Dashboard", systemImage: "square.grid.2x2")
+                    Label("Explore", systemImage: "square.grid.2x2")
                 }
                 .tag(1)
                 
-                // Mining Tab
-                NavigationStack {
-                    MiningView()
-                }
-                .tabItem {
-                    Label("Mining", systemImage: "hammer")
-                }
-                .tag(2)
+                // Watchlist Tab
+                WatchlistView()
+                    .tabItem {
+                        Label("Watchlist", systemImage: "eye")
+                    }
+                    .tag(2)
                 
                 // Search Tab
                 SearchView()

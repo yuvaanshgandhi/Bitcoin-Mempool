@@ -87,7 +87,10 @@ struct ExploreView: View {
                                 // Projected (Future) blocks - descending order
                                 // Next block is last (closest to separator)
                                 let reversedBlocks = Array(viewModel.projectedBlocks.enumerated()).reversed()
-                                ForEach(Array(reversedBlocks), id: \.element.id) { index, block in
+                                ForEach(Array(reversedBlocks), id: \.offset) { offset, element in
+                                    let index = offset
+                                    let block = element
+                                    
                                     NavigationLink(value: block) {
                                         ProjectedBlockCard(block: block, index: index)
                                             .overlay(

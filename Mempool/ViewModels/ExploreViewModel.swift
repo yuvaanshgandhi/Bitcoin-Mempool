@@ -18,37 +18,41 @@ class ExploreViewModel: ObservableObject {
     @Published var rewardStats: MiningRewardStats?
     @Published var tipHeight: Int?
     
+    // Fee Multiple stats
+    @Published var feeMultipleIndex: FeeMultipleIndexResponse?
+    
     // State
     @Published var isLoading = false
     @Published var error: String?
     @Published var newBlockArrived = false
     
     private let service = MempoolService.shared
+    private let feeMultipleService = FeeMultipleService.shared
     private let wsService = MempoolWebSocketService.shared
     private var cancellables = Set<AnyCancellable>()
-    private var projectedBlocksSubject = PassthroughSubject<[ProjectedBlock], Never>()
     
     init() {
         startPolling()
         subscribeToWebSocket()
-        
-        projectedBlocksSubject
-            .throttle(for: .seconds(3), scheduler: RunLoop.main, latest: true)
-            .sink { [weak self] blocks in
-                withAnimation { self?.projectedBlocks = blocks }
-            }
-            .store(in: &cancellables)
     }
     
     func startPolling() {
         Task { await fetchData() }
         
-        // General Data Polling (10s)
+        // General Data Polling (30s)
         // Reduced since WebSocket handles blocks, but will soon replace more with WS
-        Timer.publish(every: 10, on: .main, in: .common)
+        Timer.publish(every: 30, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
                 Task { [weak self] in await self?.fetchData() }
+            }
+            .store(in: &cancellables)
+            
+        // Projected Blocks Polling (5s)
+        Timer.publish(every: 5, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                Task { [weak self] in await self?.fetchProjectedBlocks() }
             }
             .store(in: &cancellables)
             
@@ -68,8 +72,6 @@ class ExploreViewModel: ObservableObject {
                 switch event {
                 case .newBlock(let blockData):
                     self?.handleNewBlock(blockData)
-                case .projectedBlocks(let blocks):
-                    self?.projectedBlocksSubject.send(blocks)
                 case .stats(let stats):
                     withAnimation { self?.mempoolStats = stats }
                 case .hashrate(let rates):
@@ -114,6 +116,17 @@ class ExploreViewModel: ObservableObject {
         }
     }
     
+    func fetchProjectedBlocks() async {
+        do {
+            let blocks = try await service.getMempoolBlocks()
+            withAnimation {
+                self.projectedBlocks = blocks
+            }
+        } catch {
+            print("Projected blocks fetch error: \(error)")
+        }
+    }
+    
     func fetchData() async {
         if confirmedBlocks.isEmpty { isLoading = true }
         defer { isLoading = false }
@@ -131,7 +144,11 @@ class ExploreViewModel: ObservableObject {
             async let t = service.getTipHeight()
             async let s = service.getMiningRewardStats()
             
+            // Fee Multiple
+            async let fmIndex = try? feeMultipleService.getFeeMultipleIndex()
+            
             let (fetchedFees, fetchedBlocks, fetchedConfirmed, fetchedPrice, fetchedDiff, fetchedPools, fetchedHashrate, fetchedTip, fetchedStats) = try await (fees, blocks, confirmed, btcPrice, diff, p, h, t, s)
+            let fetchedFmIndex = await fmIndex
             
             self.recommendedFees = fetchedFees
             self.projectedBlocks = fetchedBlocks
@@ -142,6 +159,11 @@ class ExploreViewModel: ObservableObject {
             self.hashrate = fetchedHashrate
             self.tipHeight = fetchedTip
             self.rewardStats = fetchedStats
+            
+            if let index = fetchedFmIndex {
+                self.feeMultipleIndex = index
+            }
+            
             self.error = nil
         } catch {
             self.error = error.localizedDescription

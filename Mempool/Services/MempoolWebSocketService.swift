@@ -53,8 +53,8 @@ class MempoolWebSocketService: ObservableObject {
         self.webSocketTask = task
         task.resume()
         
-        // Subscribe to blocks, mempool-blocks, stats, live-2h-chart
-        let subscribeMsg = #"{"action":"want","data":["blocks","mempool-blocks","stats","live-2h-chart"]}"#
+        // Subscribe to blocks, stats, live-2h-chart
+        let subscribeMsg = #"{"action":"want","data":["blocks","stats","live-2h-chart"]}"#
         task.send(.string(subscribeMsg)) { [weak self] error in
             if let error = error {
                 print("[WS] Subscribe error: \(error)")

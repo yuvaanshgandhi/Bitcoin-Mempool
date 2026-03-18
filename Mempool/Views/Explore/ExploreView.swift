@@ -411,6 +411,14 @@ struct ExploreView: View {
                     .padding(.horizontal)
                 }
                 
+                // 4. Fee Multiple
+                if let index = viewModel.feeMultipleIndex {
+                    FeeMultipleSectionView(
+                        indexData: index
+                    )
+                    .padding(.horizontal)
+                }
+                
             }
             .padding(.bottom, 50)
         }

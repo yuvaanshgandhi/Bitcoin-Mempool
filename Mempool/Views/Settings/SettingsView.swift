@@ -56,13 +56,31 @@ struct SettingsView: View {
                     }
                     .listRowBackground(Color(white: 0.08))
                     
-                    HStack {
-                        Text("Data Provider")
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Data Providers")
                             .foregroundStyle(.white)
-                        Spacer()
-                        Text("mempool.space")
-                            .foregroundStyle(.orange)
+                        
+                        HStack {
+                            Text("Core Data")
+                                .font(.subheadline)
+                                .foregroundStyle(.white.opacity(0.6))
+                            Spacer()
+                            Text("mempool.space")
+                                .font(.subheadline)
+                                .foregroundStyle(.orange)
+                        }
+                        
+                        HStack {
+                            Text("Fee Multiple")
+                                .font(.subheadline)
+                                .foregroundStyle(.white.opacity(0.6))
+                            Spacer()
+                            Text("Bull Bitcoin API")
+                                .font(.subheadline)
+                                .foregroundStyle(.orange)
+                        }
                     }
+                    .padding(.vertical, 4)
                     .listRowBackground(Color(white: 0.08))
                 } header: {
                     Text("About")

@@ -23,13 +23,14 @@ struct NewBlockData {
 }
 
 /// WebSocket service for real-time mempool.space updates
-class MempoolWebSocketService: ObservableObject {
-    static let shared = MempoolWebSocketService()
+@Observable
+class MempoolWebSocketService {
+    @ObservationIgnored static let shared = MempoolWebSocketService()
     
     let eventPublisher = PassthroughSubject<WebSocketEvent, Never>()
     
-    @Published var isConnected = false
-    @Published var lastBlockHeight: Int?
+    var isConnected = false
+    var lastBlockHeight: Int?
     
     private var webSocketTask: URLSessionWebSocketTask?
     private let session = URLSession(configuration: .default)

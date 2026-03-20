@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TransactionDetailView: View {
     @StateObject private var viewModel: TransactionDetailViewModel
-    @EnvironmentObject var currencySettings: CurrencySettings
+    @Environment(CurrencySettings.self) var currencySettings
     
     init(txid: String) {
         _viewModel = StateObject(wrappedValue: TransactionDetailViewModel(txid: txid))

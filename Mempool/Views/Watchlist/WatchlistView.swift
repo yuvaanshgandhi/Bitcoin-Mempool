@@ -2,7 +2,7 @@ import SwiftUI
 
 struct WatchlistView: View {
     @StateObject private var viewModel = WatchlistViewModel()
-    @EnvironmentObject var currencySettings: CurrencySettings
+    @Environment(CurrencySettings.self) var currencySettings
     
     var body: some View {
         NavigationStack {

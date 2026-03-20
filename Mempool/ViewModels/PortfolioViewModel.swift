@@ -2,20 +2,21 @@ import Foundation
 import SwiftUI
 import Combine
 
+@Observable
 @MainActor
-class PortfolioViewModel: ObservableObject {
-    @Published var addresses: [PortfolioAddress] = []
-    @Published var balances: [String: (confirmed: Int, mempool: Int)] = [:]
-    @Published var balanceHistory: [BalanceDataPoint] = []
-    @Published var priceHistory: [PriceDataPoint] = []
-    @Published var portfolioValueHistory: [PriceDataPoint] = []
-    @Published var price: BitcoinPrice?
+class PortfolioViewModel {
+    var addresses: [PortfolioAddress] = []
+    var balances: [String: (confirmed: Int, mempool: Int)] = [:]
+    var balanceHistory: [BalanceDataPoint] = []
+    var priceHistory: [PriceDataPoint] = []
+    var portfolioValueHistory: [PriceDataPoint] = []
+    var price: BitcoinPrice?
     
     // Sorted historical prices for interpolation
     private var sortedHistoricalPrices: [(time: TimeInterval, usd: Double)] = []
-    @Published var isLoading = false
-    @Published var isAddingAddress = false
-    @Published var error: String?
+    var isLoading = false
+    var isAddingAddress = false
+    var error: String?
     
     private let service = MempoolService.shared
     private let storage = PortfolioStorage()

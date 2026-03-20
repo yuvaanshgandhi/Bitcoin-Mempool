@@ -2,11 +2,10 @@ import Foundation
 import SwiftUI
 import Combine
 
+@Observable
 @MainActor
-class CurrencySettings: ObservableObject {
-    @AppStorage("selectedCurrency") var selectedCurrency: String = "USD" {
-        didSet { objectWillChange.send() }
-    }
+class CurrencySettings {
+    @ObservationIgnored @AppStorage("selectedCurrency") var selectedCurrency: String = "USD"
     
     static let availableCurrencies = ["USD", "EUR", "GBP", "CAD", "CHF", "AUD", "JPY"]
     

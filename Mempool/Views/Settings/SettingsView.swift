@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var currencySettings: CurrencySettings
+    @Environment(CurrencySettings.self) var currencySettings
     
     var body: some View {
         NavigationStack {

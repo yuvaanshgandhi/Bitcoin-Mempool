@@ -2,8 +2,8 @@ import SwiftUI
 
 @main
 struct MempoolApp: App {
-    @StateObject private var currencySettings = CurrencySettings()
-    @StateObject private var webSocketService = MempoolWebSocketService.shared
+    @State private var currencySettings = CurrencySettings()
+    @State private var webSocketService = MempoolWebSocketService.shared
     
     init() {
         // Connect WebSocket on launch for real-time updates
@@ -13,8 +13,8 @@ struct MempoolApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(currencySettings)
-                .environmentObject(webSocketService)
+                .environment(currencySettings)
+                .environment(webSocketService)
         }
     }
 }

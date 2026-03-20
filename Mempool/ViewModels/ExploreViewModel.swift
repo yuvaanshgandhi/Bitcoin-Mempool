@@ -2,29 +2,30 @@ import Foundation
 import Combine
 import SwiftUI
 
+@Observable
 @MainActor
-class ExploreViewModel: ObservableObject {
+class ExploreViewModel {
     // Core explore stats
-    @Published var recommendedFees: RecommendedFees?
-    @Published var projectedBlocks: [ProjectedBlock] = []
-    @Published var confirmedBlocks: [MempoolBlock] = []
-    @Published var price: BitcoinPrice?
-    @Published var mempoolStats: NetworkMempoolStats?
+    var recommendedFees: RecommendedFees?
+    var projectedBlocks: [ProjectedBlock] = []
+    var confirmedBlocks: [MempoolBlock] = []
+    var price: BitcoinPrice?
+    var mempoolStats: NetworkMempoolStats?
     
     // Mining stats
-    @Published var pools: [MiningPool] = []
-    @Published var hashrate: [Hashrate] = []
-    @Published var difficulty: DifficultyAdjustment?
-    @Published var rewardStats: MiningRewardStats?
-    @Published var tipHeight: Int?
+    var pools: [MiningPool] = []
+    var hashrate: [Hashrate] = []
+    var difficulty: DifficultyAdjustment?
+    var rewardStats: MiningRewardStats?
+    var tipHeight: Int?
     
     // Fee Multiple stats
-    @Published var feeMultipleIndex: FeeMultipleIndexResponse?
+    var feeMultipleIndex: FeeMultipleIndexResponse?
     
     // State
-    @Published var isLoading = false
-    @Published var error: String?
-    @Published var newBlockArrived = false
+    var isLoading = false
+    var error: String?
+    var newBlockArrived = false
     
     private let service = MempoolService.shared
     private let feeMultipleService = FeeMultipleService.shared

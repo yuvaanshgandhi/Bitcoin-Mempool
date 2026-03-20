@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AddressDetailView: View {
     @StateObject private var viewModel: AddressDetailViewModel
-    @EnvironmentObject var currencySettings: CurrencySettings
+    @Environment(CurrencySettings.self) var currencySettings
     
     init(address: String) {
         _viewModel = StateObject(wrappedValue: AddressDetailViewModel(address: address))

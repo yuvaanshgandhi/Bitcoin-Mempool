@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddAddressSheet: View {
-    @ObservedObject var viewModel: PortfolioViewModel
+    let viewModel: PortfolioViewModel
     @Environment(\.dismiss) private var dismiss
     @State private var addressText = ""
     @State private var labelText = ""
